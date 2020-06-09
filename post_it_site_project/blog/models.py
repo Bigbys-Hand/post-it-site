@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
@@ -10,6 +12,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
 
 # Django makes each class its own table in the DB
 # This class governs content posts. It has title, content, date_posted, and author functions, which will be DB fields.
