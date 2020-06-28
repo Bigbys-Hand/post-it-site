@@ -1,1 +1,1 @@
-web: gunicorn post_it_site_project.wsgi
+web: gunicorn C:\Users\User\PycharmProjects\Post_it Site\post_it_site_project\post_it_site_project.wsgi
